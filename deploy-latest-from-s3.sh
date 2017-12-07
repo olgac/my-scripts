@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#*/5 * * * * /srv/www/deploy-latest.sh > /dev/null 2>&1
+
 log () {
     echo "$(date +%Y%m%d_%H%M%S) - $1" | sudo -u www-data tee -a /var/log/application/deploy-$(date +%Y%m%d).log > /dev/null
 }
